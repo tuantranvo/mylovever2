@@ -1,0 +1,65 @@
+/* HEART 3D */
+.heart3d {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-text-stroke: 1px #ff4dff; 
+
+    position: absolute;
+    top: 30%;
+    left: 22%;
+
+    color: pink;
+    font-size: 28px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+
+    width: fit-content;   /* 👈 QUAN TRỌNG */
+    max-width: 0;
+
+    animation: typing 4s steps(40) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+    from { max-width: 0; }
+    to { max-width: 100%; }
+}
+
+/* CIRCLE IMAGES */
+.circle {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
+    animation: rotateCircle 10s linear infinite;
+}
+
+.circle img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Xếp 10 ảnh thành vòng tròn */
+.circle img:nth-child(1)  { transform: rotateY(0deg) translateZ(250px); }
+.circle img:nth-child(2)  { transform: rotateY(36deg) translateZ(250px); }
+.circle img:nth-child(3)  { transform: rotateY(72deg) translateZ(250px); }
+.circle img:nth-child(4)  { transform: rotateY(108deg) translateZ(250px); }
+.circle img:nth-child(5)  { transform: rotateY(144deg) translateZ(250px); }
+.circle img:nth-child(6)  { transform: rotateY(180deg) translateZ(250px); }
+.circle img:nth-child(7)  { transform: rotateY(216deg) translateZ(250px); }
+.circle img:nth-child(8)  { transform: rotateY(252deg) translateZ(250px); }
+.circle img:nth-child(9)  { transform: rotateY(288deg) translateZ(250px); }
+.circle img:nth-child(10) { transform: rotateY(324deg) translateZ(250px); }
+
+@keyframes rotateCircle {
+    from {
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateY(360deg);
+    }
+}
